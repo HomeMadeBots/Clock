@@ -1,0 +1,69 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+skinparam class {
+  BorderColor Black
+  BackgroundColor<<Client_Server_Interface>> LightGreen
+  BackgroundColor<<Component_Type>> LightGrey
+  BackgroundColor<<Data_Type>> LightBlue
+}
+
+enum E_Day  <<Data_Type>>
+{
+  Allows to model a data
+  representing a day of
+  the week.
+  __
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+interface Clock_Data <<Client_Server_Interface>>
+{
+  Gathers operations allowing to access the data of a clock.
+  __
+  {abstract} +Get_Date( OUT day:E_Day, OUT hour:uint8, OUT minute:uint8, OUT second:uint8 )
+  {abstract} +Get_Day( OUT day:E_Day )
+  {abstract} +Get_Hour( OUT hour:uint8 )
+  {abstract} +Get_Minute( OUT minute:uint8 )
+  {abstract} +Get_Second( OUT second:uint8 )
+}
+
+interface Clock_Setting <<Client_Server_Interface>>
+{
+  Gathers operations allowing to set a clock.
+  __
+  {abstract} +Increment_Day()
+  {abstract} +Increment_Hour()
+  {abstract} +Increment_Minute()
+  {abstract} +Increment_Second()
+  {abstract} +Decrement_Day()
+  {abstract} +Decrement_Hour()
+  {abstract} +Decrement_Minute()
+  {abstract} +Decrement_Second()
+}
+
+
+class Clock <<Component_Type>>
+{
+  The Clock component type allows to measure the time.
+  It is based on the micro-controller timestamp.
+  It provides services to set its current data (day, hour,
+  minute, second).
+  It shall be cyclically triggered (at least twice a
+  second to provide accurate data) using the Tick() method.
+  __
+  + Tick()
+}
+
+Clock_Setting <|.down.# "Setting" Clock
+Clock_Data <|.down.# "Data" Clock
+  
+@enduml

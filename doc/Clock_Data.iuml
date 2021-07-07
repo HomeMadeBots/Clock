@@ -1,0 +1,14 @@
+@startuml
+
+interface Clock_Data <<Client_Server_Interface>>
+{
+  Gathers operations allowing to access the data of a clock.
+  --
+  {abstract} +Get_Date( OUT day:E_Day, OUT hour:uint8, OUT minute:uint8, OUT second:uint8 )
+  {abstract} +Get_Day( OUT day:E_Day )
+  {abstract} +Get_Hour( OUT hour:uint8 )
+  {abstract} +Get_Minute( OUT minute:uint8 )
+  {abstract} +Get_Second( OUT second:uint8 )
+}
+
+@enduml

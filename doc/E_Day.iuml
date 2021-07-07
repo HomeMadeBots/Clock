@@ -1,0 +1,18 @@
+@startuml
+
+enum E_Day <<Data_Type>>
+{
+  Allows to model a data
+  representing a day of
+  the week.
+  --
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+class Clock <<Component_Type>>
+{
+  The Clock component type allows to measure the time.
+  It is based on the micro-controller timestamp.
+  It provides services to set its current data (day, hour,
+  minute, second).
+  It shall be cyclically triggered (at least twice a
+  second to provide accurate data) using the Tick() method.
+  --
+  + Tick()
+}
+
+@enduml

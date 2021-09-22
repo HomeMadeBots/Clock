@@ -1,0 +1,14 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Time_Measurement/main/doc/E_Day.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Time_Measurement/main/doc/Clock_Data.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Time_Measurement/main/doc/Clock_Setting.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Time_Measurement/main/doc/Clock.puml
+
+E_Day <.down. Clock_Data
+Clock_Data <|.down.# "Data" Clock
+Clock_Setting <|.down.# "Setting" Clock
+
+@enduml

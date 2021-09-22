@@ -1,0 +1,8 @@
+@startuml
+
+package Time_Measurement [
+  Gathers software elements allowing to measure
+  time on an embedded software.
+]
+
+@enduml

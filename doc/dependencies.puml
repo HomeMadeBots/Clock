@@ -1,0 +1,11 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Time_Measurement/main/doc/Time_Measurement.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_C_Framework/main/doc/Embedded_C_Framework.puml
+
+Time_Measurement ..> Embedded_C_Framework
+note on link : for internal design
+
+@enduml
